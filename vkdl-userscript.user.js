@@ -40,6 +40,7 @@ function main() {
             } else {
         //get title
         var RawYtSearchTerm = jQ("#eow-title").text();
+        RawYtSearchTerm = RawYtSearchTerm.replace(/['"]+/g, '');
         var LinkBase = "https://rawgit.com/Porco-Rosso/vkdl/master/index.html#";
         var YtSearchTerm = RawYtSearchTerm.trim().split(' ').join('+');
         var YTvkdlLink = LinkBase + YtSearchTerm;
@@ -66,7 +67,9 @@ function main() {
             } else {
                 // fetch title and artist on song page
                 var RawSongTitle = jQ(".fullListenHero__title").find(".soundTitle__title").children().text();
+                RawSongTitle = RawSongTitle.replace(/['"]+/g, '');
                 var RawSongArtist = jQ(".fullListenHero__title").find(".soundTitle__username").text();
+                RawSongArtist = RawSongArtist.replace(/['"]+/g, '');
 
                 var SongTitle = RawSongTitle.trim().split(' ').join('+');
                 var SongArtist = RawSongArtist.trim().split(' ').join('+');
