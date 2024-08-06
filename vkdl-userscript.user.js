@@ -1,8 +1,12 @@
 // ==UserScript==
 // @name         vkdl-userscript
-// @namespace    vkdl-userscript
-// @include      *
+// @namespace    https://github.com/Porco-Rosso/vkdl-userscript
+// @downloadURL  https://github.com/Porco-Rosso/vkdl-userscript/blob/master/vkdl-userscript.user.js
+// @updateURL  https://github.com/Porco-Rosso/vkdl-userscript/blob/master/vkdl-userscript.user.js
+// @version      0.2
 // @author       Porco-Rosso
+// @match      http://soundcloud.com/*
+// @match      https://soundcloud.com/*
 // @description  This userscript is meant to provide integration to the vkdl downloader into other websites, such as soundcloud.
 // ==/UserScript==
 
