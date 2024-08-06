@@ -16,12 +16,19 @@ function addJQuery(callback) {
     document.body.appendChild(script);
   }, false);
   document.body.appendChild(script);
+    
+    var awesomeicons = document.createElement("link")
+        awesomeicons.setAttribute("rel", "stylesheet")
+        awesomeicons.setAttribute("type", "text/css")
+        awesomeicons.setAttribute("href", "https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
 }
 
 // the guts of this userscript
 function main() {
   // Note, jQ replaces $ to avoid conflicts.
-  alert("There are " + jQ('a').length + " links on this page.");
+    jQ( '<a><span><img src="https://a-v2.sndcdn.com/assets/images/header/search-dbfe5c.svg"></span></a>' ).insertAfter( ".soundTitle__title span" );
+    
+
 }
 
 // load jQuery and execute the main function
