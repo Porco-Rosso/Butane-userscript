@@ -46,11 +46,10 @@ function main() {
             var RawSongArtist = jQ(this).find(".soundTitle__usernameText").text();
 
             var SongTitle = RawSongTitle.split(' ').join('+');
-            var SongArtist = RawSongArtist
-            console.log(RawSongArtist)
+            var SongArtist = RawSongArtist.split(' ').join('+');
             
             if (RawSongTitle.indexOf("-") >= 0){var SearchTerm = SongTitle}
-            else{ var SearchTerm = SongArtist + SongTitle}
+            else{ var SearchTerm = SongArtist + '+-+' + SongTitle}
 
             jQ('<a target="_blank" href="https://rawgit.com/Porco-Rosso/vkdl/master/index.html#' + SearchTerm + '" class="sc-button-more sc-vkdl sc-button sc-button-small sc-button-responsive" tabindex="0" title="Search on vkdl">Vkdl</a>').insertAfter(jQ(this).find(".sc-button-toolbar>.sc-button:last-child, .sc-button-group>.sc-button:last-child"));
 
