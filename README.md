@@ -14,7 +14,7 @@ Currently supports only [Soundcloud](https://soundcloud.com)
 
 
 
-At the moment it only runs on a new page refresh. Content loaded by ajax, doesn't get the button added.
+At the moment only works on Stream page.
 
 
 <h4>Installation Instructions:</h4>
