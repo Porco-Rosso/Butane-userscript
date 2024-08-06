@@ -3,13 +3,14 @@
 // @namespace    https://github.com/Porco-Rosso/vkdl-userscript
 // @downloadURL  https://github.com/Porco-Rosso/vkdl-userscript/blob/master/vkdl-userscript.user.js
 // @updateURL  https://github.com/Porco-Rosso/vkdl-userscript/blob/master/vkdl-userscript.user.js
-// @version      0.8
+// @version      1.0
 // @author       Porco-Rosso
 // @match http://*.soundcloud.com/*
 // @match https://*.soundcloud.com/*
 // @match http://*.youtube.com/*
 // @match https://*.youtube.com/*
 // @description  This userscript is meant to provide integration to the vkdl downloader into other websites, such as soundcloud and youtube.
+// @icon https://raw.githubusercontent.com/Porco-Rosso/vkdl-userscript/master/Logo_32x32.png
 // ==/UserScript==
 
 // a function that loads jQuery and calls a callback function when jQuery has finished loading
@@ -33,6 +34,10 @@ function main() {
     if (window.location.href.indexOf("youtube") > -1) {
 
         ////////////////////// youtube code /////////////////////////////////////////////////////////////////
+        if (jQ('.yt-vkdl').length) {
+                // do nothing if we have already loaded the button on song page
+                setTimeout(main, 1000);
+            } else {
         //get title
         var RawYtSearchTerm = jQ("#eow-title").text();
         var LinkBase = "https://rawgit.com/Porco-Rosso/vkdl/master/index.html#";
@@ -40,12 +45,13 @@ function main() {
         var YTvkdlLink = LinkBase + YtSearchTerm;
 
         // Generate button
-        var YTvkdlButton = jQ('<div class="yt-uix-menu "><a target="_blank" href="' + YTvkdlLink + '"><button class="yt-uix-button yt-uix-button-size-default yt-uix-button-opacity yt-uix-button-has-icon no-icon-markup click-cancels-autoplay yt-uix-menu-trigger yt-uix-tooltip" type="button" aria-haspopup="true" title="Search on VKDL" role="button" id="action-panel-overflow-button" aria-pressed="false" data-tooltip-text="Search on VKDL"><span class="yt-uix-button-content">Vkdl</span></button></a></div>');
-        console.log(YTvkdlButton);
+        var YTvkdlButton = jQ('<div class="yt-uix-menu "><a target="_blank" href="' + YTvkdlLink + '"><button class="yt-uix-button yt-vkdl yt-uix-button-size-default yt-uix-button-opacity yt-uix-button-has-icon no-icon-markup click-cancels-autoplay yt-uix-menu-trigger yt-uix-tooltip" type="button" aria-haspopup="true" title="Search on VKDL" role="button" id="action-panel-overflow-button" aria-pressed="false" data-tooltip-text="Search on VKDL"><span class="yt-uix-button-content">Vkdl</span></button></a></div>');
 
         // Insert button
         var YtButtons = jQ("#watch8-secondary-actions");
         jQ(YtButtons).append(YTvkdlButton);
+        setTimeout(main, 1000);
+            }
 
     } else {
 
