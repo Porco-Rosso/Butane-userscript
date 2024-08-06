@@ -1,16 +1,16 @@
 // ==UserScript==
 // @name         butane-userscript
-// @namespace    https://github.com/Porco-Rosso/vkdl-userscript
-// @downloadURL  https://github.com/Porco-Rosso/vkdl-userscript/blob/master/butane-userscript.user.js
-// @updateURL  https://github.com/Porco-Rosso/vkdl-userscript/blob/master/butane-userscript.user.js
+// @namespace    https://github.com/Porco-Rosso/Butane-userscript
+// @downloadURL  https://github.com/Porco-Rosso/Butane-userscript/blob/master/butane-userscript.user.js
+// @updateURL  https://github.com/Porco-Rosso/Butane-userscript/blob/master/butane-userscript.user.js
 // @version      1.1
 // @author       Porco-Rosso
 // @match http://*.soundcloud.com/*
 // @match https://*.soundcloud.com/*
 // @match http://*.youtube.com/*
 // @match https://*.youtube.com/*
-// @description  This userscript is meant to provide integration to the vkdl downloader into other websites, such as soundcloud and youtube.
-// @icon https://raw.githubusercontent.com/Porco-Rosso/vkdl-userscript/master/Logo_32x32.png
+// @description  This userscript is meant to provide integration to the Butane downloader into other websites, such as soundcloud and youtube.
+// @icon https://raw.githubusercontent.com/Porco-Rosso/Butane-userscript/master/Logo_32x32.png
 // ==/UserScript==
 
 // a function that loads jQuery and calls a callback function when jQuery has finished loading
@@ -41,16 +41,16 @@ function main() {
         //get title
         var RawYtSearchTerm = jQ("#eow-title").text();
         RawYtSearchTerm = RawYtSearchTerm.replace(/['"]+/g, '');
-        var LinkBase = "https://rawgit.com/Porco-Rosso/vkdl/master/index.html#";
+        var LinkBase = "https://rawgit.com/Porco-Rosso/Butane/master/index.html#";
         var YtSearchTerm = RawYtSearchTerm.trim().split(' ').join('+');
-        var YTvkdlLink = LinkBase + YtSearchTerm;
+        var YTButaneLink = LinkBase + YtSearchTerm;
 
         // Generate button
-        var YTvkdlButton = jQ('<div class="yt-uix-menu "><a target="_blank" href="' + YTvkdlLink + '"><button class="yt-uix-button yt-Butane yt-uix-button-size-default yt-uix-button-opacity yt-uix-button-has-icon no-icon-markup click-cancels-autoplay yt-uix-menu-trigger yt-uix-tooltip" type="button" aria-haspopup="true" title="Search on Butane" role="button" id="action-panel-overflow-button" aria-pressed="false" data-tooltip-text="Search on Butane"><span class="yt-uix-button-content">Butane</span></button></a></div>');
+        var YTButaneButton = jQ('<div class="yt-uix-menu "><a target="_blank" href="' + YTButaneLink + '"><button class="yt-uix-button yt-Butane yt-uix-button-size-default yt-uix-button-opacity yt-uix-button-has-icon no-icon-markup click-cancels-autoplay yt-uix-menu-trigger yt-uix-tooltip" type="button" aria-haspopup="true" title="Search on Butane" role="button" id="action-panel-overflow-button" aria-pressed="false" data-tooltip-text="Search on Butane"><span class="yt-uix-button-content">Butane</span></button></a></div>');
 
         // Insert button
         var YtButtons = jQ("#watch8-secondary-actions");
-        jQ(YtButtons).append(YTvkdlButton);
+        jQ(YtButtons).append(YTButaneButton);
         setTimeout(main, 1000);
             }
 
@@ -81,7 +81,7 @@ function main() {
                 }
 
                 // insert button on song page
-                jQ('<a target="_blank" href="https://rawgit.com/Porco-Rosso/vkdl/master/index.html#' + SearchTerm + '" class="sc-button-more sc-Butane sc-button sc-button-medium sc-button-responsive" tabindex="0" title="Search on Butane">Butane</a>').insertAfter(jQ(".sc-button-toolbar").find(".sc-button-toolbar>.sc-button:last-child, .sc-button-group>.sc-button:last-child"));
+                jQ('<a target="_blank" href="https://rawgit.com/Porco-Rosso/Butane/master/index.html#' + SearchTerm + '" class="sc-button-more sc-Butane sc-button sc-button-medium sc-button-responsive" tabindex="0" title="Search on Butane">Butane</a>').insertAfter(jQ(".sc-button-toolbar").find(".sc-button-toolbar>.sc-button:last-child, .sc-button-group>.sc-button:last-child"));
 
                 setTimeout(main, 1000);
             }
@@ -108,7 +108,7 @@ function main() {
                         var SearchTerm = SongArtist + '+-+' + SongTitle
                     }
                     // insert button for item
-                    jQ('<a target="_blank" href="https://rawgit.com/Porco-Rosso/vkdl/master/index.html#' + SearchTerm + '" class="sc-button-more sc-Butane sc-button sc-button-small sc-button-responsive" tabindex="0" title="Search on Butane">Butane</a>').insertAfter(jQ(this).find(".sc-button-toolbar>.sc-button:last-child, .sc-button-group>.sc-button:last-child"));
+                    jQ('<a target="_blank" href="https://rawgit.com/Porco-Rosso/Butane/master/index.html#' + SearchTerm + '" class="sc-button-more sc-Butane sc-button sc-button-small sc-button-responsive" tabindex="0" title="Search on Butane">Butane</a>').insertAfter(jQ(this).find(".sc-button-toolbar>.sc-button:last-child, .sc-button-group>.sc-button:last-child"));
 
 
                     //   Can't manage to get a custom image in place of the sc icons. I even made this one myself :(        
