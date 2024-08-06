@@ -50,4 +50,5 @@ function main() {
 }
 
 // load jQuery and execute the main function
-addJQuery(main);
+
+window.onload = addJQuery(main);
