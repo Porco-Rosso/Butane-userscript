@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         vkdl-userscript
+// @name         butane-userscript
 // @namespace    https://github.com/Porco-Rosso/vkdl-userscript
-// @downloadURL  https://github.com/Porco-Rosso/vkdl-userscript/blob/master/vkdl-userscript.user.js
-// @updateURL  https://github.com/Porco-Rosso/vkdl-userscript/blob/master/vkdl-userscript.user.js
+// @downloadURL  https://github.com/Porco-Rosso/vkdl-userscript/blob/master/butane-userscript.user.js
+// @updateURL  https://github.com/Porco-Rosso/vkdl-userscript/blob/master/butane-userscript.user.js
 // @version      1.1
 // @author       Porco-Rosso
 // @match http://*.soundcloud.com/*
@@ -34,7 +34,7 @@ function main() {
     if (window.location.href.indexOf("youtube") > -1) {
 
         ////////////////////// youtube code /////////////////////////////////////////////////////////////////
-        if (jQ('.yt-vkdl').length) {
+        if (jQ('.yt-Butane').length) {
                 // do nothing if we have already loaded the button on song page
                 setTimeout(main, 1000);
             } else {
@@ -46,7 +46,7 @@ function main() {
         var YTvkdlLink = LinkBase + YtSearchTerm;
 
         // Generate button
-        var YTvkdlButton = jQ('<div class="yt-uix-menu "><a target="_blank" href="' + YTvkdlLink + '"><button class="yt-uix-button yt-vkdl yt-uix-button-size-default yt-uix-button-opacity yt-uix-button-has-icon no-icon-markup click-cancels-autoplay yt-uix-menu-trigger yt-uix-tooltip" type="button" aria-haspopup="true" title="Search on VKDL" role="button" id="action-panel-overflow-button" aria-pressed="false" data-tooltip-text="Search on VKDL"><span class="yt-uix-button-content">Vkdl</span></button></a></div>');
+        var YTvkdlButton = jQ('<div class="yt-uix-menu "><a target="_blank" href="' + YTvkdlLink + '"><button class="yt-uix-button yt-Butane yt-uix-button-size-default yt-uix-button-opacity yt-uix-button-has-icon no-icon-markup click-cancels-autoplay yt-uix-menu-trigger yt-uix-tooltip" type="button" aria-haspopup="true" title="Search on Butane" role="button" id="action-panel-overflow-button" aria-pressed="false" data-tooltip-text="Search on Butane"><span class="yt-uix-button-content">Butane</span></button></a></div>');
 
         // Insert button
         var YtButtons = jQ("#watch8-secondary-actions");
@@ -61,7 +61,7 @@ function main() {
         // check what type of page we are on, stream vs. song        
         if (jQ('.fullListenHero__title').length) {
 
-            if (jQ('.sc-vkdl').length) {
+            if (jQ('.sc-Butane').length) {
                 // do nothing if we have already loaded the button on song page
                 setTimeout(main, 1000);
             } else {
@@ -81,7 +81,7 @@ function main() {
                 }
 
                 // insert button on song page
-                jQ('<a target="_blank" href="https://rawgit.com/Porco-Rosso/vkdl/master/index.html#' + SearchTerm + '" class="sc-button-more sc-vkdl sc-button sc-button-medium sc-button-responsive" tabindex="0" title="Search on vkdl">Vkdl</a>').insertAfter(jQ(".sc-button-toolbar").find(".sc-button-toolbar>.sc-button:last-child, .sc-button-group>.sc-button:last-child"));
+                jQ('<a target="_blank" href="https://rawgit.com/Porco-Rosso/vkdl/master/index.html#' + SearchTerm + '" class="sc-button-more sc-Butane sc-button sc-button-medium sc-button-responsive" tabindex="0" title="Search on Butane">Butane</a>').insertAfter(jQ(".sc-button-toolbar").find(".sc-button-toolbar>.sc-button:last-child, .sc-button-group>.sc-button:last-child"));
 
                 setTimeout(main, 1000);
             }
@@ -90,11 +90,11 @@ function main() {
             // if on stream page
             jQ(".soundList__item").each(function (i) {
 
-                if (jQ(this).hasClass("has-vkdl") == true) {
+                if (jQ(this).hasClass("has-Butane") == true) {
                     //do nothing if button is already loaded for the song list entry
                 } else {
 
-                    jQ(this).addClass("has-vkdl");
+                    jQ(this).addClass("has-Butane");
                     //fetch title and artist on stream 
                     var RawSongTitle = jQ(this).find(".soundTitle__title").children().text();
                     var RawSongArtist = jQ(this).find(".soundTitle__usernameText").text();
@@ -108,7 +108,7 @@ function main() {
                         var SearchTerm = SongArtist + '+-+' + SongTitle
                     }
                     // insert button for item
-                    jQ('<a target="_blank" href="https://rawgit.com/Porco-Rosso/vkdl/master/index.html#' + SearchTerm + '" class="sc-button-more sc-vkdl sc-button sc-button-small sc-button-responsive" tabindex="0" title="Search on vkdl">Vkdl</a>').insertAfter(jQ(this).find(".sc-button-toolbar>.sc-button:last-child, .sc-button-group>.sc-button:last-child"));
+                    jQ('<a target="_blank" href="https://rawgit.com/Porco-Rosso/vkdl/master/index.html#' + SearchTerm + '" class="sc-button-more sc-Butane sc-button sc-button-small sc-button-responsive" tabindex="0" title="Search on Butane">Butane</a>').insertAfter(jQ(this).find(".sc-button-toolbar>.sc-button:last-child, .sc-button-group>.sc-button:last-child"));
 
 
                     //   Can't manage to get a custom image in place of the sc icons. I even made this one myself :(        
