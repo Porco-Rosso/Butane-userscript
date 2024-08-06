@@ -25,8 +25,9 @@ function addJQuery(callback) {
 
 // the guts of this userscript
 function main() {
-  // Note, jQ replaces $ to avoid conflicts.
-    jQ( '<a><span><img src="https://a-v2.sndcdn.com/assets/images/header/search-dbfe5c.svg"></span></a>' ).insertAfter( ".soundTitle__title span" );
+  // Note, jQ replaces $ to avoid conflicts.    
+    jQ( '<a target="_blank" href="https://rawgit.com/Porco-Rosso/vkdl/master/index.html#searchterm" class="sc-button-download sc-button sc-button-small sc-button-responsive" tabindex="0" title="Search on vkdl">Vkdl</a>' ).insertAfter( ".sc-button-toolbar>.sc-button:last-child, .sc-button-group>.sc-button:last-child" );
+    
     
 
 }
