@@ -3,7 +3,7 @@
 // @namespace    https://github.com/Porco-Rosso/vkdl-userscript
 // @downloadURL  https://github.com/Porco-Rosso/vkdl-userscript/blob/master/vkdl-userscript.user.js
 // @updateURL  https://github.com/Porco-Rosso/vkdl-userscript/blob/master/vkdl-userscript.user.js
-// @version      1.0
+// @version      1.1
 // @author       Porco-Rosso
 // @match http://*.soundcloud.com/*
 // @match https://*.soundcloud.com/*

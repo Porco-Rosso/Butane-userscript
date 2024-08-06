@@ -3,7 +3,7 @@
 
 *A userscript meant to complement [vkdl](https://rawgit.com/Porco-Rosso/vkdl/), the web based music player/downloader*
 
-Version 1.0
+Version 1.1
 
 ---
 
