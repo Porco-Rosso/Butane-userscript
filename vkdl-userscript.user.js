@@ -24,12 +24,29 @@ function addJQuery(callback) {
 }
 
 // the guts of this userscript
-function main() {
-  // Note, jQ replaces $ to avoid conflicts.    
-    jQ( '<a target="_blank" href="https://rawgit.com/Porco-Rosso/vkdl/master/index.html#searchterm" class="sc-button-download sc-button sc-button-small sc-button-responsive" tabindex="0" title="Search on vkdl">Vkdl</a>' ).insertAfter( ".sc-button-toolbar>.sc-button:last-child, .sc-button-group>.sc-button:last-child" );
-    
-    
 
+
+//function searchvkdl() {
+//    
+//    var SongTitle = jQ(this).parents("li:first").find( ".soundTitle__title" ).children().text();
+//    alert(SongTitle);
+//}
+
+
+function main() {
+  // Note, jQ replaces $ to avoid conflicts.
+    
+    jQ( ".soundList__item" ).each(function( i ) {
+    
+        var RawSongTitle = jQ(this).find( ".soundTitle__title" ).children().text();
+        
+        var SongTitle = RawSongTitle.split(' ').join('+');
+        
+            jQ( '<a target="_blank" href="https://rawgit.com/Porco-Rosso/vkdl/master/index.html#' + SongTitle + '" class="sc-button-download sc-button sc-button-small sc-button-responsive" tabindex="0" title="Search on vkdl">Vkdl</a>' ).insertAfter( jQ(this).find(".sc-button-toolbar>.sc-button:last-child, .sc-button-group>.sc-button:last-child") );
+          
+    
+    });
+    
 }
 
 // load jQuery and execute the main function
