@@ -23,6 +23,8 @@ ___
 
 <h4>Installation Instructions:</h4>
 * **Chrome**: Download the [userscript file](https://github.com/Porco-Rosso/Butane-userscript/raw/master/butane-userscript.user.js) (right-click, 'Save Link as'). In Chrome, open your Extensions page (enter [chrome://extensions](chrome://extensions) into your address bar), then drag-and-drop the `butane-userscript.user.js` file from your hard drive onto the extensions page in the Chrome browser. If you are getting permissions problems (e.g., Chrome is saying you can not load scripts from this page,) you are not correctly saving the file to disk first, then dragging-and-dropping the userscript into the extensions window.
+<br>
+**Update:** Chrome now disables userscripts every time the browser restarts. Either don't shutdown your browser or use an extension like [tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en).
 
 
 * **Firefox**: Install [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) and then load the [userscript](https://github.com/Porco-Rosso/Butane-userscript/raw/master/Butane-userscript.user.js)
