@@ -1,4 +1,4 @@
-<img src=https://raw.githubusercontent.com/Porco-Rosso/vkdl/vkdl-dev/images/Logo.png width=100 height=30 />-Userscript
+<img src=https://raw.githubusercontent.com/Porco-Rosso/vkdl/master/images/Logo.png width=100 height=30 />-Userscript
 =====
 
 *A userscript meant to complement [vkdl](https://rawgit.com/Porco-Rosso/vkdl/), the web based music player/downloader*
