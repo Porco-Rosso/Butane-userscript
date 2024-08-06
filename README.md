@@ -1,6 +1,11 @@
 <img src=https://raw.githubusercontent.com/Porco-Rosso/Butane/master/images/Logo.png width=40 height=40 />  Butane-Userscript
 =====
 
+<h1>Butane no longer works</h1>
+Butane-Userscript is now defunct. [See why](https://github.com/Porco-Rosso/Butane).
+
+---
+
 *A userscript meant to complement [Butane](https://rawgit.com/Porco-Rosso/Butane/), the web based music player/downloader*
 
 Version 2.0.0
@@ -32,7 +37,7 @@ ___
 
 * **Other browsers that supprt Userscripts (Safari, Opera, etc.)**: Browse to the [userscript](https://github.com/Porco-Rosso/Butane-userscript/raw/master/Butane-userscript.user.js) and install the script when prompted.
 
---- 
+---
 ![GNU GPL v2 License](https://img.shields.io/badge/license-GNU%20GPL%20v2-brightgreen.svg?style=flat-square)
 
  [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
